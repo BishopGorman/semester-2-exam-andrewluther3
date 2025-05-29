@@ -27,13 +27,13 @@ public class TargetX : MonoBehaviour
     }
 
     // When target is clicked, destroy it, update score, and generate explosion
-    private void OnMouseEnter()
+    private void OnMouseDown()
     {
         if (gameManagerX.isGameActive)
         {
             Destroy(gameObject);
             gameManagerX.UpdateScore(pointValue);
-            Explode();
+            
         }
                
     }
@@ -69,10 +69,7 @@ public class TargetX : MonoBehaviour
     }
 
     // Display explosion particle at object's position
-    void Explode ()
-    {
-        Instantiate(explosion, transform.position, explosion.transform.rotation);
-    }
+   
 
     // After a delay, Moves the object behind background so it collides with the Sensor object
     IEnumerator RemoveObjectRoutine ()
